@@ -5,6 +5,4 @@ const withNextra = nextra({
   themeConfig: './theme.config.jsx',
 })
 
-export default withNextra({
-  reactStrictMode: true,
-})
+export default withNextra()

@@ -14,21 +14,8 @@ This blog is where I share my thoughts, experiments, and learnings about:
 - **AI Engineering** - Building production ML systems
 - **Code & Tutorials** - Interactive demos and walkthroughs
 
+---
+
 ## Latest Posts
 
-import { getPagesUnderRoute } from 'nextra/context'
-import Link from 'next/link'
-
-export function Posts() {
-  return getPagesUnderRoute('/posts').map(page => (
-    <div key={page.route} className="post-item">
-      <Link href={page.route}>
-        <h3>{page.meta?.title || page.frontMatter?.title || page.name}</h3>
-      </Link>
-      <p>{page.frontMatter?.description}</p>
-      <span className="post-date">{page.frontMatter?.date}</span>
-    </div>
-  ))
-}
-
-<Posts />
+Check out my posts below, or learn more [about me](/about).

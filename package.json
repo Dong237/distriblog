@@ -8,16 +8,21 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "keywords": ["blog", "llm", "ai", "nextjs"],
+  "keywords": [
+    "blog",
+    "llm",
+    "ai",
+    "nextjs"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "description": "Personal blog for LLM Engineering content",
   "dependencies": {
-    "next": "^16.1.4",
-    "nextra": "^4.6.1",
-    "nextra-theme-blog": "^4.6.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "next": "^14.2.35",
+    "nextra": "^3.3.1",
+    "nextra-theme-blog": "^3.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-live": "^4.1.8"
   }
 }

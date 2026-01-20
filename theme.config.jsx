@@ -17,9 +17,5 @@ export default {
       url: 'https://github.com/your-username',
       name: 'GitHub',
     },
-    {
-      url: 'https://twitter.com/your-username',
-      name: 'Twitter',
-    },
   ],
 }
