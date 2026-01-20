@@ -1,6 +1,6 @@
 # DistriBlog - Personal Blog Project
 
-> LLM Engineer's personal blog built with Next.js + Nextra
+> LLM Engineer's personal blog built with Next.js + Nextra, styled after Anthropic's engineering blog
 
 ## Quick Commands
 
@@ -15,13 +15,19 @@ npm run start    # Run production build
 ```
 DistriBlog/
 ├── pages/                 # Pages and blog posts (MDX)
-│   ├── _app.jsx           # Custom App component
-│   ├── index.mdx          # Homepage
+│   ├── _app.jsx           # Custom App with layout wrapper
+│   ├── index.jsx          # Custom homepage with hero + post list
 │   ├── about.mdx          # About page
 │   └── posts/             # Blog posts directory
 │       └── *.mdx          # Individual blog posts
 ├── components/            # React components
+│   ├── Header.jsx         # Site header with nav + dark mode toggle
+│   ├── Footer.jsx         # Site footer with social links
+│   ├── ArticleCard.jsx    # Post card for listing
+│   ├── PostList.jsx       # Posts listing component
 │   └── LiveCode.jsx       # Interactive code editor (react-live)
+├── styles/
+│   └── globals.css        # Anthropic-style theme (cream/dark mode)
 ├── public/                # Static assets (images, etc.)
 ├── theme.config.jsx       # Nextra blog theme configuration
 └── next.config.mjs        # Next.js + Nextra configuration
@@ -31,10 +37,32 @@ DistriBlog/
 
 | File | Purpose |
 |------|---------|
-| `theme.config.jsx` | Blog metadata, nav links, footer, dark mode |
+| `styles/globals.css` | Full design system (typography, colors, layout) |
+| `components/Header.jsx` | Navigation with logo, links, social icons, dark mode |
+| `components/Footer.jsx` | Footer with social links |
+| `components/ArticleCard.jsx` | Post card with title, date, description, tags |
+| `pages/index.jsx` | Custom homepage with hero section |
+| `pages/_app.jsx` | Layout wrapper with Header + Footer |
+| `theme.config.jsx` | Nextra SEO config (minimal, uses custom layout) |
 | `components/LiveCode.jsx` | Interactive code demos using react-live |
 | `pages/posts/*.mdx` | Blog posts (Markdown + JSX) |
-| `pages/_app.jsx` | Custom App, imports theme styles |
+
+## Design System
+
+### Colors
+- **Light mode**: Cream background `#FAF7F2`, dark text `#1a1a1a`
+- **Dark mode**: Warm dark `#1a1816`, light text `#f5f5f4`
+- CSS custom properties in `:root` and `.dark`
+
+### Typography
+- **Headings**: Georgia (serif) for editorial feel
+- **Body**: Inter (sans-serif) for readability
+- **Code**: JetBrains Mono / system monospace
+
+### Layout
+- Content max-width: 720px
+- Sticky header with blur backdrop
+- Responsive mobile design
 
 ## Writing Blog Posts
 
@@ -64,9 +92,10 @@ DistriBlog/
 ## Tech Stack
 
 - **Framework**: Next.js 14 + React 18
-- **Blog Theme**: Nextra 3 Blog Theme
+- **Blog Theme**: Nextra 3 Blog Theme (with custom components)
 - **Interactive Code**: react-live
-- **Styling**: Nextra theme defaults (customizable)
+- **Styling**: Custom CSS design system
+- **Frontmatter Parsing**: gray-matter
 
 ## Deployment
 
@@ -79,21 +108,33 @@ Alternative: Netlify, Cloudflare Pages, GitHub Pages
 
 ## Customization
 
-### Theme Config (`theme.config.jsx`)
-- Update `navs` array for navigation links
-- Modify `footer` for copyright info
-- Set `darkMode: true/false` to enable/disable
+### Personalizing the Blog
+- Update `components/Header.jsx`: Change site title, social links
+- Update `components/Footer.jsx`: Change social links
+- Update `pages/index.jsx`: Customize hero title/subtitle
+- Update social URLs in header/footer (search for `your-username`)
 
-### Styling
-- Add custom CSS in `pages/_app.jsx`
-- Override theme styles with CSS custom properties
+### Theme Colors
+Edit CSS custom properties in `styles/globals.css`:
+```css
+:root {
+  --bg-primary: #FAF7F2;
+  --text-primary: #1a1a1a;
+  --accent-color: #d97706;
+  /* etc. */
+}
+```
 
 ## Current Sprint
 
 - [x] Initial project setup
 - [x] Interactive code demos with react-live
 - [x] Sample blog post with demo
-- [ ] Customize theme colors/styling
+- [x] Anthropic-style redesign with custom components
+- [x] Cream/dark mode theme
+- [x] Custom header/footer
+- [x] Hero section homepage
 - [ ] Add more blog posts
 - [ ] Deploy to Vercel
 - [ ] Add custom domain
+- [ ] Personalize social links and branding

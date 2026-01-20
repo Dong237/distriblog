@@ -18,6 +18,7 @@
   "license": "MIT",
   "description": "Personal blog for LLM Engineering content",
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "^14.2.35",
     "nextra": "^3.3.1",
     "nextra-theme-blog": "^3.3.1",
