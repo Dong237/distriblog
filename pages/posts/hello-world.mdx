@@ -1,0 +1,78 @@
+---
+title: Hello World - My First Post
+date: 2025-01-20
+description: Welcome to my blog! Here's a quick intro with an interactive code demo.
+tag: intro, react
+author: Your Name
+---
+
+# Hello World!
+
+Welcome to my blog! I'm excited to start sharing my journey as an LLM Engineer.
+
+## What to Expect
+
+This blog will cover:
+
+- **LLM Development** - Building apps with GPT, Claude, and open-source models
+- **Prompt Engineering** - Techniques for getting the best results
+- **AI Infrastructure** - Deploying and scaling AI systems
+- **Code Tutorials** - Hands-on guides with interactive examples
+
+## Interactive Demo
+
+One cool thing about this blog is that you can **edit and run code directly** in your browser. Try it out below!
+
+import { LiveCode } from '../../components/LiveCode'
+
+<LiveCode code={`function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div style={{ fontFamily: 'system-ui' }}>
+      <h3>Interactive Counter</h3>
+      <p>Count: {count}</p>
+      <button
+        onClick={() => setCount(c => c + 1)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#3b82f6',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+          marginRight: '8px'
+        }}
+      >
+        Increment
+      </button>
+      <button
+        onClick={() => setCount(0)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#6b7280',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}
+      >
+        Reset
+      </button>
+    </div>
+  )
+}
+
+render(<Counter />)`} noInline={true} />
+
+Try changing the button colors or adding new features!
+
+## What's Next
+
+In upcoming posts, I'll dive into:
+
+1. Building a simple chatbot with the OpenAI API
+2. Fine-tuning a small language model
+3. Deploying LLM apps to production
+
+Stay tuned!
